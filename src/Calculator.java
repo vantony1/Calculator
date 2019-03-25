@@ -1,13 +1,3 @@
-/*Name: Victor Nikhil Antony
-NetID: vantony
-ClassID: 134
-Assignment # Project1 -- Calculator
-TR 4:50-6:05
-TA Name: Sifan Ye
-I did not collaborate with anyone on this assignment
- */
-
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -18,13 +8,11 @@ import java.util.regex.Pattern;
 
 public class Calculator {
 	
+	//Datastructures required for this project
 	static Stack<Float> operands = new Stack<Float>();
 	static Stack<Character> operators = new Stack<Character>();
 	static HashMap<String, Float> contents = new HashMap();
-	static ArrayList<Character> trigFunction = new ArrayList<>();
-	
-	
-			
+	static ArrayList<Character> trigFunction = new ArrayList<>();			
 	
 	//method to convert from in-fix to post-fox
 	//aslo checks for valid and well-formed expressions
@@ -34,7 +22,7 @@ public class Calculator {
 		operands.clear();
 		operators.clear();
 		
-		
+		//Changes input to a char array
 		char[]data = string.toCharArray();
 		
 		System.out.println("Processing Input: " + Arrays.toString(data));
@@ -56,6 +44,7 @@ public class Calculator {
 		int s = 0;
 		int r = 0;
 		
+		//Iterates through the input and checks for input mismatch
 		for(int i = 0; i < data.length; i++) {
 			
 			switch(data[i]) {
@@ -148,6 +137,7 @@ public class Calculator {
 		
 		
 		//Runs through the char array to push objects into appropriate stacks
+		//preparing the data for shunting yard
 		for(int i = 0; i < data.length; i++) {
 			
 			
